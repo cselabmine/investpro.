@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="InvestPro demo investment dashboard">
+  <title>InvestPro | Smart Investing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">↗</span><span>invest<span class="brand-light">pro</span></span></a>
+      <div class="side-label">WORKSPACE</div>
+      <nav class="side-nav">
+        <button class="nav-link active" data-view="overview"><span>▦</span> Overview</button>
+        <button class="nav-link" data-view="portfolio"><span>◫</span> My portfolio</button>
+        <button class="nav-link" data-view="plans"><span>◈</span> Investment plans</button>
+        <button class="nav-link" data-view="calculator"><span>⌗</span> SIP calculator</button>
+        <button class="nav-link" data-view="transactions"><span>↔</span> Transactions</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-icon">✦</div><strong>Need a hand?</strong><p>Explore the demo or learn how the platform works.</p><a href="#about">Learn more ↗</a></div>
+        <button class="nav-link logout-btn" id="logoutBtn"><span>⇥</span> Log out</button>
+        <div class="profile-mini"><div class="avatar" id="sideAvatar">K</div><div><strong id="sideName">Karan Deep</strong><small>Demo account</small></div><span class="dots">•••</span></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuBtn" aria-label="Open menu">☰</button>
+        <div class="breadcrumb">Workspace <span>/</span> <strong id="pageName">Overview</strong></div>
+        <div class="top-actions"><span class="market-status"><i></i> Demo market</span><button class="icon-btn" title="Notifications">♧<b></b></button><div class="avatar top-avatar" id="topAvatar">K</div></div>
+      </header>
+
+      <section class="view active-view" id="overviewView">
+        <div class="welcome-row"><div><p class="eyebrow">MONDAY, YOUR MONEY YOUR WAY</p><h1>Good morning, <span id="welcomeName">Karan</span> <span class="wave">✦</span></h1><p class="subheading">Here's what's happening with your investments today.</p></div><button class="primary-btn" data-goto="plans">＋ Explore investments</button></div>
+        <div class="stats-grid">
+          <article class="stat-card main-stat"><div class="stat-top"><span>Total portfolio value</span><span class="stat-icon">◈</span></div><div class="stat-value" id="totalValue">₹2,48,500</div><div class="stat-foot"><span class="positive" id="totalGain">↗ ₹18,500 (8.04%)</span><span>vs. invested amount</span></div><div class="sparkline"><svg viewBox="0 0 300 55" preserveAspectRatio="none"><path d="M0 44 C20 40 23 25 45 31 S75 42 94 24 S125 30 145 18 S175 32 195 16 S225 25 245 10 S280 18 300 3" /></svg></div></article>
+          <article class="stat-card"><div class="stat-top"><span>Amount invested</span><span class="stat-icon muted-icon">↗</span></div><div class="stat-value" id="investedValue">₹2,30,000</div><div class="stat-foot"><span class="neutral">Across 3 plans</span></div><div class="mini-bars"><i style="height:32%"></i><i style="height:50%"></i><i style="height:42%"></i><i style="height:67%"></i><i style="height:55%"></i><i style="height:82%"></i><i style="height:72%"></i><i style="height:100%"></i></div></article>
+          <article class="stat-card"><div class="stat-top"><span>Total returns</span><span class="stat-icon muted-icon">％</span></div><div class="stat-value positive" id="returnsValue">+₹18,500</div><div class="stat-foot"><span class="positive">↗ 8.04%</span><span>overall return</span></div><div class="return-line"><span style="width:68%"></span></div></article>
+        </div>
+
+        <div class="content-grid">
+          <article class="panel performance-panel"><div class="panel-heading"><div><h2>Portfolio performance</h2><p>Track your portfolio over time</p></div><select id="chartRange" class="select-control"><option value="6">Last 6 months</option><option value="3">Last 3 months</option><option value="12">Last 12 months</option></select></div><div class="chart-legend"><span><i class="legend-green"></i> Portfolio value</span><strong id="chartCurrent">₹2,48,500</strong></div><div class="chart-wrap"><div class="y-labels"><span>₹2.5L</span><span>₹2.0L</span><span>₹1.5L</span><span>₹1.0L</span></div><svg class="performance-chart" viewBox="0 0 700 230" preserveAspectRatio="none"><defs><linearGradient id="areaFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#35d39a" stop-opacity=".24"/><stop offset="100%" stop-color="#35d39a" stop-opacity="0"/></linearGradient></defs><path class="chart-area" d="M0 190 C45 180 55 150 100 162 S155 130 200 145 S260 95 300 118 S360 105 400 82 S460 105 500 65 S560 78 600 42 S660 53 700 18 L700 230 L0 230 Z"/><path class="chart-line" d="M0 190 C45 180 55 150 100 162 S155 130 200 145 S260 95 300 118 S360 105 400 82 S460 105 500 65 S560 78 600 42 S660 53 700 18"/></svg></div><div class="x-labels" id="chartLabels"><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span></div></article>
+          <article class="panel allocation-panel"><div class="panel-heading"><div><h2>Asset allocation</h2><p>Your investment mix</p></div><button class="more-btn" data-goto="portfolio">•••</button></div><div class="donut-area"><div class="donut"><div><strong>100%</strong><small>Allocated</small></div></div></div><div class="allocation-legend"><div><i class="dot dot-one"></i><span>Equity</span><strong>55%</strong></div><div><i class="dot dot-two"></i><span>Debt</span><strong>30%</strong></div><div><i class="dot dot-three"></i><span>Gold</span><strong>15%</strong></div></div></article>
+        </div>
+
+        <div class="bottom-grid">
+          <article class="panel holdings-panel"><div class="panel-heading"><div><h2>My investments</h2><p>Your active investment plans</p></div><button class="text-btn" data-goto="portfolio">View all ↗</button></div><div class="table-scroll"><table><thead><tr><th>INVESTMENT</th><th>INVESTED</th><th>CURRENT VALUE</th><th>RETURNS</th></tr></thead><tbody id="holdingsTable"></tbody></table></div></article>
+          <article class="panel quick-panel"><div class="panel-heading"><div><h2>Quick actions</h2><p>Make your next move</p></div></div><button class="quick-action" data-goto="plans"><span class="quick-icon green-bg">＋</span><span><strong>Start investing</strong><small>Explore available plans</small></span><b>›</b></button><button class="quick-action" data-goto="calculator"><span class="quick-icon blue-bg">⌗</span><span><strong>Calculate SIP</strong><small>Plan your monthly savings</small></span><b>›</b></button><button class="quick-action" data-goto="transactions"><span class="quick-icon purple-bg">↔</span><span><strong>Transactions</strong><small>Review your activity</small></span><b>›</b></button></article>
+        </div>
+        <div class="disclaimer">Demo environment only. Values and returns are illustrative and are not financial advice.</div>
+      </section>
+
+      <section class="view" id="portfolioView"><div class="page-title"><div><p class="eyebrow">YOUR MONEY AT A GLANCE</p><h1>My portfolio</h1><p class="subheading">A closer look at your demo investments.</p></div><button class="primary-btn" data-goto="plans">＋ Add investment</button></div><div class="stats-grid compact-stats"><article class="stat-card"><div class="stat-top"><span>Portfolio value</span><span class="stat-icon">◈</span></div><div class="stat-value" id="portfolioTotal">₹2,48,500</div></article><article class="stat-card"><div class="stat-top"><span>Invested amount</span><span class="stat-icon muted-icon">↗</span></div><div class="stat-value" id="portfolioInvested">₹2,30,000</div></article><article class="stat-card"><div class="stat-top"><span>Overall returns</span><span class="stat-icon muted-icon">％</span></div><div class="stat-value positive" id="portfolioReturns">+₹18,500</div></article></div><article class="panel"><div class="panel-heading"><div><h2>All holdings</h2><p>Individual plan performance</p></div></div><div class="table-scroll"><table><thead><tr><th>INVESTMENT</th><th>TYPE</th><th>INVESTED</th><th>CURRENT VALUE</th><th>RETURNS</th></tr></thead><tbody id="portfolioTable"></tbody></table></div></article></section>
+
+      <section class="view" id="plansView"><div class="page-title"><div><p class="eyebrow">MAKE YOUR MONEY WORK</p><h1>Investment plans</h1><p class="subheading">Explore sample plans and simulate an investment.</p></div></div><div class="notice"><span>ⓘ</span> These are fictional demo products, not real financial offerings. No money will be collected.</div><div class="plans-grid" id="plansGrid"></div></section>
+
+      <section class="view" id="calculatorView"><div class="page-title"><div><p class="eyebrow">PLAN WITH PURPOSE</p><h1>SIP calculator</h1><p class="subheading">Estimate how your monthly contributions could grow over time.</p></div></div><div class="calculator-layout"><article class="panel calculator-panel"><div class="panel-heading"><div><h2>Calculate your SIP</h2><p>Adjust the values to see an estimate.</p></div></div><div class="range-field"><div class="range-head"><label for="monthlyAmount">Monthly investment</label><strong id="monthlyLabel">₹5,000</strong></div><input type="range" id="monthlyAmount" min="500" max="50000" step="500" value="5000"><div class="range-bounds"><span>₹500</span><span>₹50,000</span></div></div><div class="range-field"><div class="range-head"><label for="expectedRate">Expected annual return</label><strong id="rateLabel">12%</strong></div><input type="range" id="expectedRate" min="1" max="20" step="0.5" value="12"><div class="range-bounds"><span>1%</span><span>20%</span></div></div><div class="range-field"><div class="range-head"><label for="duration">Investment period</label><strong id="durationLabel">10 years</strong></div><input type="range" id="duration" min="1" max="30" step="1" value="10"><div class="range-bounds"><span>1 year</span><span>30 years</span></div></div><div class="calc-disclaimer">This calculator uses an assumed monthly compounding rate. Actual returns can vary and are not guaranteed.</div></article><article class="panel result-panel"><p class="eyebrow">ESTIMATED FUTURE VALUE</p><div class="result-value" id="futureValue">₹11,50,000</div><p class="result-caption">Potential value at the end of your investment period</p><div class="result-breakdown"><div><span>Invested amount</span><strong id="calcInvested">₹6,00,000</strong></div><div><span>Estimated returns</span><strong class="positive" id="calcReturns">₹5,50,000</strong></div></div><div class="result-bar"><span id="principalBar"></span><i id="gainBar"></i></div><div class="bar-legend"><span><i class="dot dot-two"></i> Invested</span><span><i class="dot dot-one"></i> Estimated returns</span></div></article></div></section>
+
+      <section class="view" id="transactionsView"><div class="page-title"><div><p class="eyebrow">YOUR ACTIVITY</p><h1>Transactions</h1><p class="subheading">A record of simulated demo activity.</p></div></div><article class="panel"><div class="panel-heading"><div><h2>Recent transactions</h2><p>Latest activity in your demo account</p></div><span class="demo-tag">DEMO DATA</span></div><div class="table-scroll"><table><thead><tr><th>DESCRIPTION</th><th>DATE</th><th>TYPE</th><th>AMOUNT</th><th>STATUS</th></tr></thead><tbody id="transactionsTable"></tbody></table></div><div class="empty-state" id="emptyTransactions" hidden>No transactions yet. Explore a demo investment plan to get started.</div></article></section>
+
+      <footer id="about">© 2026 InvestPro Demo. Built for learning purposes. <span>Invest thoughtfully. Learn continuously.</span></footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="authModal"><div class="auth-card"><button class="modal-close" id="closeAuth">×</button><a class="brand auth-brand" href="#"><span class="brand-mark">↗</span><span>invest<span class="brand-light">pro</span></span></a><p class="eyebrow">WELCOME TO INVESTPRO</p><h2 id="authTitle">Sign in to your account</h2><p class="auth-sub">Use the demo account to explore the platform.</p><form id="authForm"><label for="userName" id="nameLabel" hidden>Your name</label><input id="userName" type="text" placeholder="Your name" hidden><label for="userEmail">Email address</label><input id="userEmail" type="email" placeholder="you@example.com" value="demo@investpro.com" required><label for="userPassword">Password</label><input id="userPassword" type="password" placeholder="Enter any password" value="demo1234" required><button class="primary-btn full-btn" type="submit" id="authSubmit">Sign in</button></form><p class="switch-auth" id="switchAuth">New to InvestPro? <button type="button">Create demo account</button></p><p class="auth-note">Demo only — never enter a real banking password.</p></div></div>
+  <div class="modal-backdrop" id="investModal"><div class="dialog-card"><button class="modal-close" id="closeInvest">×</button><p class="eyebrow">DEMO INVESTMENT</p><h2 id="investTitle">Invest in a plan</h2><p class="auth-sub" id="investDescription">Choose an amount to simulate.</p><form id="investForm"><label for="investAmount">Investment amount (₹)</label><input id="investAmount" type="number" min="500" step="500" value="5000" required><div class="calc-disclaimer">This action only updates your local demo dashboard. No payment is taken.</div><button class="primary-btn full-btn" type="submit">Confirm demo investment</button></form></div></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
